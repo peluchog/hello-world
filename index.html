@@ -1,2 +1,414 @@
-<h1 style="color: blue;">hola mundo</h1>
-<h2 style="color: gray;">Hoy es 12 de octubre de 2026</h2>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Jose Luciano Gil - Portafolio Profesional</title>
+  <style>
+    /* ========================================================
+       DISEÑO MOBILE FIRST - Paleta Fresca y Suave
+       ======================================================== */
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+      background: linear-gradient(180deg, #f0fdfa 0%, #f8fafc 100%);
+      color: #334155;
+      line-height: 1.7;
+      min-height: 100vh;
+    }
+
+    /* Barra de Navegación */
+    header {
+      background: #ffffff;
+      padding: 1rem 1.25rem;
+      border-bottom: 1px solid #e2e8f0;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: 0 2px 10px rgba(15, 118, 110, 0.04);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.75rem;
+    }
+
+    header h1 {
+      font-size: 1.25rem;
+      color: #0f766e;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      text-align: center;
+    }
+
+    nav {
+      display: flex;
+      gap: 0.6rem;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: #475569;
+      font-weight: 500;
+      font-size: 0.9rem;
+      padding: 0.4rem 0.9rem;
+      border-radius: 20px;
+      background: #f1f5f9;
+      transition: all 0.25s ease;
+    }
+
+    nav a:hover {
+      background: #ccfbf1;
+      color: #0f766e;
+    }
+
+    /* Contenedor Principal (Mobile-First) */
+    .main-container {
+      width: 100%;
+      max-width: 860px;
+      margin: 0 auto;
+      padding: 1.25rem 1rem 2rem 1rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+    }
+
+    /* Tarjetas de Contenido */
+    .card {
+      background: #ffffff;
+      padding: 1.5rem;
+      border-radius: 16px;
+      border: 1px solid #e6eff5;
+      box-shadow: 0 4px 18px -2px rgba(15, 118, 110, 0.05);
+    }
+
+    /* Sección Principal: Sobre Mí & Foto */
+    .hero-card {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      gap: 1.5rem;
+    }
+
+    /* Espacio para la foto */
+    .foto-espacio {
+      width: 130px;
+      height: 130px;
+      flex-shrink: 0;
+      border-radius: 50%;
+      overflow: hidden;
+      border: 4px solid #ccfbf1;
+      box-shadow: 0 6px 16px rgba(15, 118, 110, 0.12);
+      background: #e6f4f2;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+    }
+
+    .foto-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .foto-placeholder {
+      display: none;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(135deg, #ccfbf1 0%, #99f6e4 100%);
+      color: #0f766e;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      font-size: 1.75rem;
+    }
+
+    .foto-placeholder small {
+      font-size: 0.65rem;
+      font-weight: 500;
+      color: #115e59;
+      margin-top: 2px;
+    }
+
+    .hero-info {
+      display: flex;
+      flex-direction: column;
+      gap: 0.6rem;
+    }
+
+    .hero-titulo {
+      color: #134e4a;
+      font-size: 1.5rem;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+    }
+
+    .hero-subtitulo {
+      color: #0f766e;
+      font-weight: 600;
+      font-size: 0.95rem;
+    }
+
+    .hero-bio {
+      color: #475569;
+      font-size: 1rem;
+      line-height: 1.7;
+      margin-top: 0.25rem;
+    }
+
+    /* Sección Experiencia */
+    .seccion-titulo {
+      color: #134e4a;
+      font-size: 1.4rem;
+      margin-bottom: 1rem;
+      padding-bottom: 0.5rem;
+      border-bottom: 2px solid #e6f4f2;
+    }
+
+    .resumen-destacado {
+      font-size: 0.98rem;
+      color: #334155;
+      margin-bottom: 1.5rem;
+      background: #f0fdfa;
+      padding: 1rem;
+      border-radius: 10px;
+      border-left: 4px solid #14b8a6;
+    }
+
+    .puesto-titulo {
+      color: #0f766e;
+      font-size: 1.15rem;
+      margin-top: 1.5rem;
+      margin-bottom: 0.25rem;
+    }
+
+    .puesto-meta {
+      font-size: 0.9rem;
+      color: #64748b;
+      margin-bottom: 0.5rem;
+    }
+
+    .puesto-meta em {
+      font-style: normal;
+      background: #f1f5f9;
+      padding: 2px 8px;
+      border-radius: 6px;
+    }
+
+    ul {
+      margin-left: 1.25rem;
+      margin-bottom: 1rem;
+    }
+
+    li {
+      margin-bottom: 0.4rem;
+      color: #475569;
+      font-size: 0.95rem;
+    }
+
+    /* Footer con fondo oscuro en la misma paleta */
+    footer {
+      background-color: #042f2e; /* Verde petróleo profundo */
+      color: #e6f4f2;
+      padding: 2.2rem 1.5rem;
+      border-radius: 16px;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1rem;
+      box-shadow: 0 6px 20px rgba(4, 47, 46, 0.15);
+    }
+
+    footer h3 {
+      font-size: 1.3rem;
+      color: #5eead4; /* Acento menta brillante */
+      letter-spacing: -0.01em;
+    }
+
+    footer p {
+      color: #ccfbf1;
+      font-size: 0.95rem;
+      max-width: 500px;
+    }
+
+    .footer-links {
+      display: flex;
+      flex-direction: column;
+      gap: 0.6rem;
+      width: 100%;
+      margin: 0.5rem 0;
+    }
+
+    .footer-links a {
+      color: #ffffff;
+      text-decoration: none;
+      font-weight: 500;
+      background: rgba(255, 255, 255, 0.08);
+      padding: 0.6rem 1rem;
+      border-radius: 8px;
+      transition: all 0.2s ease;
+      display: inline-block;
+    }
+
+    .footer-links a:hover {
+      background: rgba(94, 234, 212, 0.2);
+      color: #5eead4;
+    }
+
+    .footer-copy {
+      font-size: 0.85rem;
+      color: #99f6e4;
+      opacity: 0.85;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+      padding-top: 1rem;
+      width: 100%;
+    }
+
+    /* ========================================================
+       MEJORAS PARA TABLET Y ESCRITORIO (Media Query)
+       ======================================================== */
+    @media (min-width: 768px) {
+      header {
+        flex-direction: row;
+        justify-content: space-between;
+        padding: 1.25rem 2.5rem;
+      }
+
+      header h1 {
+        text-align: left;
+      }
+
+      .main-container {
+        padding: 2rem 1.5rem;
+        gap: 2rem;
+      }
+
+      .card {
+        padding: 2.2rem;
+      }
+
+      /* Hero en horizontal en pantallas amplias */
+      .hero-card {
+        flex-direction: row;
+        align-items: flex-start;
+        text-align: left;
+        gap: 2rem;
+      }
+
+      .foto-espacio {
+        width: 150px;
+        height: 150px;
+      }
+
+      .footer-links {
+        flex-direction: row;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 1rem;
+      }
+
+      .footer-links a {
+        display: inline-flex;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Barra de Navegación -->
+  <header>
+    <h1>Jose Luciano Gil Bustos</h1>
+    <nav>
+      <a href="#sobre-mi">Sobre mí</a>
+      <a href="#experiencia">Experiencia</a>
+      <a href="#contacto">Contacto</a>
+    </nav>
+  </header>
+
+  <!-- Div con Contenido Principal -->
+  <div class="main-container">
+
+    <!-- Sección Principal: Título, Párrafo Sobre Mí y Espacio para Foto -->
+    <section id="sobre-mi" class="card hero-card">
+      <div class="foto-espacio">
+        <!-- Espacio para la foto: al colocar 'foto-perfil.jpg' se mostrará automáticamente -->
+        <img src="foto-perfil.jpg" alt="Foto de Jose Luciano Gil" class="foto-img" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+        <div class="foto-placeholder">
+          <span>JL</span>
+          <small>Tu foto aquí</small>
+        </div>
+      </div>
+
+      <div class="hero-info">
+        <h2 class="hero-titulo">Hola, soy Jose Luciano Gil</h2>
+        <p class="hero-subtitulo">Paralegal • Case Manager • Operaciones & Flujos con IA</p>
+        <p class="hero-bio">
+          Profesional bilingüe con más de 8 años de trayectoria gestionando portafolios de casos legales de alta exigencia, negociaciones complejas y operaciones logísticas. Me especializo en la gestión integral de casos de lesiones personales (intake, reducción de gravámenes médicos y acuerdos procesales), así como en la creación e integración de flujos de trabajo inteligentes con IA (Claude) y herramientas no-code.
+        </p>
+      </div>
+    </section>
+
+    <!-- Sección Experiencia Laboral -->
+    <section id="experiencia" class="card">
+      <h2 class="seccion-titulo">Experiencia Laboral</h2>
+      <p class="resumen-destacado">
+        <strong>Especialista bilingüe en operaciones legales y optimización:</strong> Amplia experiencia en firmas estadounidenses gestionando ciclos completos de casos (Personal Injury), reducción agresiva de facturas médicas y desarrollo de sistemas internos.
+      </p>
+
+      <h3 class="puesto-titulo">Paralegal – Operaciones & Marketing</h3>
+      <p class="puesto-meta"><strong>Robert Hindin & Associates</strong> | <em>Septiembre 2025 – Presente</em></p>
+      <ul>
+        <li>Gestión integral de casos de lesiones personales desde la admisión (intake) hasta el acuerdo final (settlement).</li>
+        <li>Negociación y reducción de gravámenes y facturas médicas (medical liens).</li>
+        <li>Diseño de flujos de trabajo asistidos por IA (Claude) y herramientas no-code.</li>
+      </ul>
+
+      <h3 class="puesto-titulo">Case Manager – Lesiones Personales</h3>
+      <p class="puesto-meta"><strong>Neostella / Anthem Injury Lawyers</strong> | <em>Octubre 2024 – Julio 2025</em></p>
+      <ul>
+        <li>Entrevistas a clientes, evaluación de responsabilidad y revisión de informes policiales.</li>
+        <li>Coordinación de tratamientos médicos y negociación directa con ajustadores de seguros.</li>
+        <li>Redacción de cartas de demanda (demand letters) y preparación para mediaciones.</li>
+      </ul>
+
+      <h3 class="puesto-titulo">Especialista de Soporte & Control de Calidad (QC)</h3>
+      <p class="puesto-meta"><strong>Neostella</strong> (Promovido a Case Manager) | <em>Diciembre 2023 – Octubre 2024</em></p>
+      <ul>
+        <li>Auditoría y control de calidad de expedientes legales bajo estrictos tiempos de entrega.</li>
+      </ul>
+
+      <h3 class="puesto-titulo">Coordinador de Logística y Transporte</h3>
+      <p class="puesto-meta"><strong>Sales Strategy / RCG Logistics & SmartHop</strong> | <em>2021 – 2023</em></p>
+      <ul>
+        <li>Negociación de fletes, gestión de documentación y pólizas de seguros, y optimización de rutas.</li>
+      </ul>
+    </section>
+
+    <!-- Footer con Datos de Contacto (Fondo oscuro en la misma paleta y centrado) -->
+    <footer id="contacto">
+      <h3>Datos de Contacto</h3>
+      <p>¿Te gustaría conectar o conversar sobre una oportunidad profesional? Puedes contactarme a través de:</p>
+      
+      <div class="footer-links">
+        <a href="mailto:hikigil@gmail.com">📧 hikigil@gmail.com</a>
+        <a href="tel:+573504091707">📱 +57 350 409 1707</a>
+        <a href="https://linkedin.com/in/luciano-gil" target="_blank">🔗 linkedin.com/in/luciano-gil</a>
+      </div>
+
+      <p class="footer-copy">Bello, Antioquia, Colombia • Disponible para modalidad remota</p>
+    </footer>
+
+  </div>
+
+</body>
+</html>
