@@ -81,8 +81,40 @@
       </ul>
     </section>
 
-    <!-- Footer con Datos de Contacto (Fondo oscuro en la misma paleta y centrado) -->
-    <footer id="contacto">
+    <!-- Sección Formulario de Contacto -->
+    <section id="contacto" class="card contacto-card">
+      <h2 class="seccion-titulo">Contacto</h2>
+      <p class="contacto-descripcion">
+        ¿Te interesa colaborar o tienes alguna propuesta? Déjame un mensaje y te responderé lo antes posible.
+      </p>
+
+      <form id="formulario-contacto" class="formulario-contacto">
+        <div class="campo-grupo">
+          <label for="nombre">Nombre</label>
+          <input type="text" id="nombre" name="nombre" placeholder="Tu nombre completo" required autocomplete="name">
+        </div>
+
+        <div class="campo-grupo">
+          <label for="correo">Correo</label>
+          <input type="email" id="correo" name="correo" placeholder="ejemplo@correo.com" required autocomplete="email">
+        </div>
+
+        <div class="campo-grupo">
+          <label for="mensaje">Mensaje</label>
+          <textarea id="mensaje" name="mensaje" rows="4" placeholder="Escribe tu mensaje aquí..." required></textarea>
+        </div>
+
+        <button type="submit" id="btn-enviar" class="btn-enviar">
+          <span class="btn-texto">Enviar</span>
+          <span class="btn-spinner" style="display: none;">Enviando...</span>
+        </button>
+
+        <div id="form-alerta" class="form-alerta" style="display: none;"></div>
+      </form>
+    </section>
+
+    <!-- Footer con Datos de Contacto -->
+    <footer>
       <h3>Datos de Contacto</h3>
       <p>¿Te gustaría conectar o conversar sobre una oportunidad profesional? Puedes contactarme a través de:</p>
       
@@ -97,5 +129,7 @@
 
   </div>
 
+  <!-- Firebase & App Script -->
+  <script type="module" src="app.js"></script>
 </body>
 </html>
