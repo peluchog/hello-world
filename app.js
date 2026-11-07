@@ -37,7 +37,7 @@ if (contactForm) {
     const mensaje = mensajeInput.value.trim();
 
     if (!nombre || !correo || !mensaje) {
-      mostrarAlerta("Por favor, completa todos los campos.", "error");
+      mostrarAlerta(texto("form.missing"), "error");
       return;
     }
 
@@ -52,11 +52,11 @@ if (contactForm) {
         fecha: serverTimestamp()
       });
 
-      mostrarAlerta("¡Mensaje enviado correctamente! Me pondré en contacto pronto.", "exito");
+      mostrarAlerta(texto("form.success"), "exito");
       contactForm.reset();
     } catch (error) {
       console.error("Error al guardar mensaje en Firestore:", error);
-      mostrarAlerta("Hubo un error al enviar el mensaje. Intenta de nuevo más tarde.", "error");
+      mostrarAlerta(texto("form.error"), "error");
     } finally {
       setLoading(false);
     }
@@ -90,4 +90,9 @@ function mostrarAlerta(mensaje, tipo) {
       formAlert.style.display = "none";
     }, 6000);
   }
+}
+
+// Texto traducido según el idioma activo (definido en i18n.js)
+function texto(clave) {
+  return window.i18n ? window.i18n.t(clave) : clave;
 }

@@ -731,3 +731,51 @@ footer p {
     padding: 2.75rem 2.5rem;
   }
 }
+
+/* ==========================================================================
+   SELECTOR DE IDIOMA (ES / EN) EN EL ENCABEZADO
+   ========================================================================== */
+.lang-switch {
+  display: inline-flex;
+  padding: 3px;
+  gap: 2px;
+  border-radius: var(--radius-full);
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid var(--border-subtle);
+}
+
+.lang-btn {
+  font-family: var(--font-main);
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  color: var(--text-muted);
+  background: transparent;
+  border: 0;
+  border-radius: var(--radius-full);
+  padding: 0.4rem 0.85rem;
+  min-height: 32px;
+  cursor: pointer;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.lang-btn:hover {
+  color: var(--accent-cyan);
+}
+
+.lang-btn:focus-visible {
+  outline: 2px solid var(--accent-cyan);
+  outline-offset: 2px;
+}
+
+.lang-btn[aria-pressed="true"] {
+  color: #070a13;
+  background: linear-gradient(135deg, var(--accent-cyan), var(--accent-violet));
+  box-shadow: 0 0 14px rgba(56, 189, 248, 0.35);
+}
+
+@media (min-width: 768px) {
+  header nav {
+    margin-left: auto;
+  }
+}

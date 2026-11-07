@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Jose Luciano Gil - Portafolio Profesional</title>
+  <title data-i18n="meta.title">Jose Luciano Gil - Portafolio Profesional</title>
   <!-- Fuentes Modernas: Plus Jakarta Sans & Outfit -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -16,30 +16,34 @@
   <header>
     <h1>Jose Luciano Gil Bustos</h1>
     <nav>
-      <a href="#sobre-mi">Sobre mí</a>
-      <a href="#experiencia">Experiencia</a>
-      <a href="#contacto">Contacto</a>
+      <a href="#sobre-mi" data-i18n="nav.about">Sobre mí</a>
+      <a href="#experiencia" data-i18n="nav.experience">Experiencia</a>
+      <a href="#contacto" data-i18n="nav.contact">Contacto</a>
     </nav>
+
+    <!-- Selector de idioma Español / Inglés -->
+    <div class="lang-switch" role="group" aria-label="Idioma" data-i18n-aria="lang.label">
+      <button type="button" class="lang-btn" data-lang="es" aria-pressed="true">ES</button>
+      <button type="button" class="lang-btn" data-lang="en" aria-pressed="false">EN</button>
+    </div>
   </header>
 
   <!-- Div con Contenido Principal -->
   <div class="main-container">
 
-    <!-- Sección Principal: Título, Párrafo Sobre Mí y Espacio para Foto -->
+    <!-- Sección Principal: Título, Párrafo Sobre Mí y Foto -->
     <section id="sobre-mi" class="card hero-card">
       <div class="foto-espacio">
-        <!-- Espacio para la foto: al colocar 'foto-perfil.jpg' se mostrará automáticamente -->
-        <img src="foto-perfil.jpg" alt="Foto de Jose Luciano Gil" class="foto-img" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+        <img src="foto-perfil.jpg" alt="Foto de Jose Luciano Gil" data-i18n-alt="hero.photoAlt" class="foto-img" width="400" height="400" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
         <div class="foto-placeholder">
           <span>JL</span>
-          <small>Tu foto aquí</small>
         </div>
       </div>
 
       <div class="hero-info">
-        <h2 class="hero-titulo">Hola, soy Jose Luciano Gil</h2>
-        <p class="hero-subtitulo">Paralegal • Case Manager • Operaciones & Flujos con IA</p>
-        <p class="hero-bio">
+        <h2 class="hero-titulo" data-i18n="hero.title">Hola, soy Jose Luciano Gil</h2>
+        <p class="hero-subtitulo" data-i18n="hero.subtitle">Paralegal • Case Manager • Operaciones & Flujos con IA</p>
+        <p class="hero-bio" data-i18n="hero.bio">
           Profesional bilingüe con más de 8 años de trayectoria gestionando portafolios de casos legales de alta exigencia, negociaciones complejas y operaciones logísticas. Me especializo en la gestión integral de casos de lesiones personales (intake, reducción de gravámenes médicos y acuerdos procesales), así como en la creación e integración de flujos de trabajo inteligentes con IA (Claude) y herramientas no-code.
         </p>
       </div>
@@ -47,66 +51,66 @@
 
     <!-- Sección Experiencia Laboral -->
     <section id="experiencia" class="card">
-      <h2 class="seccion-titulo">Experiencia Laboral</h2>
-      <p class="resumen-destacado">
+      <h2 class="seccion-titulo" data-i18n="exp.title">Experiencia Laboral</h2>
+      <p class="resumen-destacado" data-i18n="exp.summary">
         <strong>Especialista bilingüe en operaciones legales y optimización:</strong> Amplia experiencia en firmas estadounidenses gestionando ciclos completos de casos (Personal Injury), reducción agresiva de facturas médicas y desarrollo de sistemas internos.
       </p>
 
-      <h3 class="puesto-titulo">Paralegal – Operaciones & Marketing</h3>
-      <p class="puesto-meta"><strong>Robert Hindin & Associates</strong> | <em>Septiembre 2025 – Presente</em></p>
+      <h3 class="puesto-titulo" data-i18n="exp.job1.title">Paralegal – Operaciones & Marketing</h3>
+      <p class="puesto-meta"><strong>Robert Hindin & Associates</strong> | <em data-i18n="exp.job1.dates">Septiembre 2025 – Presente</em></p>
       <ul>
-        <li>Gestión integral de casos de lesiones personales desde la admisión (intake) hasta el acuerdo final (settlement).</li>
-        <li>Negociación y reducción de gravámenes y facturas médicas (medical liens).</li>
-        <li>Diseño de flujos de trabajo asistidos por IA (Claude) y herramientas no-code.</li>
+        <li data-i18n="exp.job1.b1">Gestión integral de casos de lesiones personales desde la admisión (intake) hasta el acuerdo final (settlement).</li>
+        <li data-i18n="exp.job1.b2">Negociación y reducción de gravámenes y facturas médicas (medical liens).</li>
+        <li data-i18n="exp.job1.b3">Diseño de flujos de trabajo asistidos por IA (Claude) y herramientas no-code.</li>
       </ul>
 
-      <h3 class="puesto-titulo">Case Manager – Lesiones Personales</h3>
-      <p class="puesto-meta"><strong>Neostella / Anthem Injury Lawyers</strong> | <em>Octubre 2024 – Julio 2025</em></p>
+      <h3 class="puesto-titulo" data-i18n="exp.job2.title">Case Manager – Lesiones Personales</h3>
+      <p class="puesto-meta"><strong>Neostella / Anthem Injury Lawyers</strong> | <em data-i18n="exp.job2.dates">Octubre 2024 – Julio 2025</em></p>
       <ul>
-        <li>Entrevistas a clientes, evaluación de responsabilidad y revisión de informes policiales.</li>
-        <li>Coordinación de tratamientos médicos y negociación directa con ajustadores de seguros.</li>
-        <li>Redacción de cartas de demanda (demand letters) y preparación para mediaciones.</li>
+        <li data-i18n="exp.job2.b1">Entrevistas a clientes, evaluación de responsabilidad y revisión de informes policiales.</li>
+        <li data-i18n="exp.job2.b2">Coordinación de tratamientos médicos y negociación directa con ajustadores de seguros.</li>
+        <li data-i18n="exp.job2.b3">Redacción de cartas de demanda (demand letters) y preparación para mediaciones.</li>
       </ul>
 
-      <h3 class="puesto-titulo">Especialista de Soporte & Control de Calidad (QC)</h3>
-      <p class="puesto-meta"><strong>Neostella</strong> (Promovido a Case Manager) | <em>Diciembre 2023 – Octubre 2024</em></p>
+      <h3 class="puesto-titulo" data-i18n="exp.job3.title">Especialista de Soporte & Control de Calidad (QC)</h3>
+      <p class="puesto-meta"><strong>Neostella</strong> <span data-i18n="exp.job3.promoted">(Promovido a Case Manager)</span> | <em data-i18n="exp.job3.dates">Diciembre 2023 – Octubre 2024</em></p>
       <ul>
-        <li>Auditoría y control de calidad de expedientes legales bajo estrictos tiempos de entrega.</li>
+        <li data-i18n="exp.job3.b1">Auditoría y control de calidad de expedientes legales bajo estrictos tiempos de entrega.</li>
       </ul>
 
-      <h3 class="puesto-titulo">Coordinador de Logística y Transporte</h3>
+      <h3 class="puesto-titulo" data-i18n="exp.job4.title">Coordinador de Logística y Transporte</h3>
       <p class="puesto-meta"><strong>Sales Strategy / RCG Logistics & SmartHop</strong> | <em>2021 – 2023</em></p>
       <ul>
-        <li>Negociación de fletes, gestión de documentación y pólizas de seguros, y optimización de rutas.</li>
+        <li data-i18n="exp.job4.b1">Negociación de fletes, gestión de documentación y pólizas de seguros, y optimización de rutas.</li>
       </ul>
     </section>
 
     <!-- Sección Formulario de Contacto -->
     <section id="contacto" class="card contacto-card">
-      <h2 class="seccion-titulo">Contacto</h2>
-      <p class="contacto-descripcion">
+      <h2 class="seccion-titulo" data-i18n="contact.title">Contacto</h2>
+      <p class="contacto-descripcion" data-i18n="contact.desc">
         ¿Te interesa colaborar o tienes alguna propuesta? Déjame un mensaje y te responderé lo antes posible.
       </p>
 
       <form id="formulario-contacto" class="formulario-contacto">
         <div class="campo-grupo">
-          <label for="nombre">Nombre</label>
-          <input type="text" id="nombre" name="nombre" placeholder="Tu nombre completo" required autocomplete="name">
+          <label for="nombre" data-i18n="form.name">Nombre</label>
+          <input type="text" id="nombre" name="nombre" placeholder="Tu nombre completo" data-i18n-placeholder="form.namePh" required autocomplete="name">
         </div>
 
         <div class="campo-grupo">
-          <label for="correo">Correo</label>
-          <input type="email" id="correo" name="correo" placeholder="ejemplo@correo.com" required autocomplete="email">
+          <label for="correo" data-i18n="form.email">Correo</label>
+          <input type="email" id="correo" name="correo" placeholder="ejemplo@correo.com" data-i18n-placeholder="form.emailPh" required autocomplete="email">
         </div>
 
         <div class="campo-grupo">
-          <label for="mensaje">Mensaje</label>
-          <textarea id="mensaje" name="mensaje" rows="4" placeholder="Escribe tu mensaje aquí..." required></textarea>
+          <label for="mensaje" data-i18n="form.message">Mensaje</label>
+          <textarea id="mensaje" name="mensaje" rows="4" placeholder="Escribe tu mensaje aquí..." data-i18n-placeholder="form.messagePh" required></textarea>
         </div>
 
         <button type="submit" id="btn-enviar" class="btn-enviar">
-          <span class="btn-texto">Enviar</span>
-          <span class="btn-spinner" style="display: none;">Enviando...</span>
+          <span class="btn-texto" data-i18n="form.send">Enviar</span>
+          <span class="btn-spinner" style="display: none;" data-i18n="form.sending">Enviando...</span>
         </button>
 
         <div id="form-alerta" class="form-alerta" style="display: none;"></div>
@@ -115,20 +119,22 @@
 
     <!-- Footer con Datos de Contacto -->
     <footer>
-      <h3>Datos de Contacto</h3>
-      <p>¿Te gustaría conectar o conversar sobre una oportunidad profesional? Puedes contactarme a través de:</p>
-      
+      <h3 data-i18n="footer.title">Datos de Contacto</h3>
+      <p data-i18n="footer.desc">¿Te gustaría conectar o conversar sobre una oportunidad profesional? Puedes contactarme a través de:</p>
+
       <div class="footer-links">
         <a href="mailto:hikigil@gmail.com">📧 hikigil@gmail.com</a>
         <a href="tel:+573504091707">📱 +57 350 409 1707</a>
         <a href="https://linkedin.com/in/luciano-gil" target="_blank">🔗 linkedin.com/in/luciano-gil</a>
       </div>
 
-      <p class="footer-copy">Bello, Antioquia, Colombia • Disponible para modalidad remota</p>
+      <p class="footer-copy" data-i18n="footer.location">Bello, Antioquia, Colombia • Disponible para modalidad remota</p>
     </footer>
 
   </div>
 
+  <!-- Traducción Español / Inglés (se carga antes que app.js) -->
+  <script src="i18n.js"></script>
   <!-- Firebase & App Script -->
   <script type="module" src="app.js"></script>
 </body>
